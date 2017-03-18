@@ -15,6 +15,7 @@
 		787B16191E7DA508000AF4ED /* NewsProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787B16181E7DA508000AF4ED /* NewsProjectTests.swift */; };
 		787B16241E7DA508000AF4ED /* NewsProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787B16231E7DA508000AF4ED /* NewsProjectUITests.swift */; };
 		787B16321E7DACB8000AF4ED /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787B16311E7DACB8000AF4ED /* ServerManager.swift */; };
+		787B16341E7DC062000AF4ED /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787B16331E7DC062000AF4ED /* Article.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		787B16231E7DA508000AF4ED /* NewsProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsProjectUITests.swift; sourceTree = "<group>"; };
 		787B16251E7DA508000AF4ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		787B16311E7DACB8000AF4ED /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
+		787B16331E7DC062000AF4ED /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				787B16031E7DA508000AF4ED /* AppDelegate.swift */,
 				787B16051E7DA508000AF4ED /* ViewController.swift */,
 				787B16311E7DACB8000AF4ED /* ServerManager.swift */,
+				787B16331E7DC062000AF4ED /* Article.swift */,
 				787B16071E7DA508000AF4ED /* Main.storyboard */,
 				787B160A1E7DA508000AF4ED /* Assets.xcassets */,
 				787B160C1E7DA508000AF4ED /* LaunchScreen.storyboard */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				787B16341E7DC062000AF4ED /* Article.swift in Sources */,
 				787B16061E7DA508000AF4ED /* ViewController.swift in Sources */,
 				787B16321E7DACB8000AF4ED /* ServerManager.swift in Sources */,
 				787B16041E7DA508000AF4ED /* AppDelegate.swift in Sources */,

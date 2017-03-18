@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    var articlesArray = [Article]()
+    
+    
     override func loadView() {
         super.loadView()
         
@@ -21,21 +25,18 @@ class ViewController: UIViewController {
         let manager = ServerManager.sharedManager
         
         
-        
         manager.testRequest(source: stringURL) { (data) in
             
             let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [String : Any]
             
             let articles = json["articles"] as? [[String : Any]]
-            var authors = [String]()
-            
             for article in articles! {
-                if let author = article["author"] as? String {
-                    authors.append(author)
-                }
+                let articleObj = Article(response: article as! [String : String])
+                self.articlesArray.append(articleObj)
             }
-            print(authors)
+            print(self.articlesArray.count)
         }
+        
 
         
     }
