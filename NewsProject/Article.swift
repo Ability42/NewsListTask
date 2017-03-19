@@ -22,11 +22,8 @@ class Article: NSObject {
         self.kAuthor = response["author"]!
         self.kTitle = response["title"]!
         self.kDescription = response["description"]!
-
         self.kUrl = response["url"]!
-
         self.kUrlToImage = response["urlToImage"]!
-
         self.KPublishedAt = response["publishedAt"]!
 
     }
