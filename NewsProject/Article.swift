@@ -10,21 +10,45 @@ import UIKit
 
 class Article: NSObject {
 
-    var kAuthor: String
-    var kTitle: String
-    var kDescription: String
-    var kUrl: String
-    var kUrlToImage: String
-    var KPublishedAt: String
+    var kAuthor: String?
+    var kTitle: String?
+    var kDescription: String?
+    var kUrl: String?
+    var kUrlToImage: String?
+    var KPublishedAt: String?
+    var kImage: UIImage?
     
     
-    init(response: [String:String]) {
-        self.kAuthor = response["author"]!
-        self.kTitle = response["title"]!
-        self.kDescription = response["description"]!
-        self.kUrl = response["url"]!
-        self.kUrlToImage = response["urlToImage"]!
-        self.KPublishedAt = response["publishedAt"]!
+    init(withServer response:[String:Any]) {
+        super.init()
+        if let title = response["title"] as? String,
+            let author = response["author"] as? String,
+            let description = response["description"] as? String,
+            let url = response["url"] as? String,
+            let imageUrl = response["urlToImage"] as? String,
+            let publishedAt = response["publishedAt"] as? String {
+            
+            self.kTitle = title
+            self.kAuthor = author
+            self.kDescription = description
+            self.kUrl = url
+            self.KPublishedAt = publishedAt
+            self.downloadImage(from: imageUrl)
+        }
+    }
+    
+    func downloadImage(from url: String) {
+        let urlRequest = URLRequest(url: URL(string: url)!)
+        let task = URLSession.shared.dataTask(with: urlRequest) { (data, resp, err) in
+            if err != nil {
+                print(err?.localizedDescription ?? 0)
+                return
+            }
+            self.kImage = UIImage.init(data: data!)
+        }
+        DispatchQueue.main.async {
+            task.resume()
+        }
 
     }
 

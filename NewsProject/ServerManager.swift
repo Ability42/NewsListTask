@@ -12,7 +12,6 @@ class ServerManager: NSObject {
 
     static let sharedManager = ServerManager()
     
-    
     func testRequest(source: String, completionHandler: @escaping (Data) -> ()) {
         
         let targetURL = URL.init(string: source)
