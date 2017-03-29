@@ -28,5 +28,4 @@ class ServerManager: NSObject {
         }.resume()
         
     }
-
 }

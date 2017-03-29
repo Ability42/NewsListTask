@@ -70,6 +70,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
 
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let webVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "web") as! WebViewController
+        webVC.url = self.articlesArray?[indexPath.item].kUrl
+        self.present(webVC, animated: true, completion: nil)
+    }
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

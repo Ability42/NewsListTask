@@ -17,6 +17,7 @@
 		787B16321E7DACB8000AF4ED /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787B16311E7DACB8000AF4ED /* ServerManager.swift */; };
 		787B16341E7DC062000AF4ED /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787B16331E7DC062000AF4ED /* Article.swift */; };
 		789C879E1E7DCF7F0061D59B /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789C879D1E7DCF7F0061D59B /* ArticleTableViewCell.swift */; };
+		78A6A0351E8B9B0500BC625C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A6A0341E8B9B0500BC625C /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		787B16311E7DACB8000AF4ED /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		787B16331E7DC062000AF4ED /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		789C879D1E7DCF7F0061D59B /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		78A6A0341E8B9B0500BC625C /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				787B16331E7DC062000AF4ED /* Article.swift */,
 				789C879D1E7DCF7F0061D59B /* ArticleTableViewCell.swift */,
 				787B16071E7DA508000AF4ED /* Main.storyboard */,
+				78A6A0341E8B9B0500BC625C /* WebViewController.swift */,
 				787B160A1E7DA508000AF4ED /* Assets.xcassets */,
 				787B160C1E7DA508000AF4ED /* LaunchScreen.storyboard */,
 				787B160F1E7DA508000AF4ED /* Info.plist */,
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				789C879E1E7DCF7F0061D59B /* ArticleTableViewCell.swift in Sources */,
+				78A6A0351E8B9B0500BC625C /* WebViewController.swift in Sources */,
 				787B16341E7DC062000AF4ED /* Article.swift in Sources */,
 				787B16061E7DA508000AF4ED /* ViewController.swift in Sources */,
 				787B16321E7DACB8000AF4ED /* ServerManager.swift in Sources */,
