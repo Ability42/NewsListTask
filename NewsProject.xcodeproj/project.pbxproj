@@ -18,6 +18,9 @@
 		787B16341E7DC062000AF4ED /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787B16331E7DC062000AF4ED /* Article.swift */; };
 		789C879E1E7DCF7F0061D59B /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789C879D1E7DCF7F0061D59B /* ArticleTableViewCell.swift */; };
 		78A6A0351E8B9B0500BC625C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A6A0341E8B9B0500BC625C /* WebViewController.swift */; };
+		78FE96171E8E90E400F92C17 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78FE96161E8E90E400F92C17 /* WebKit.framework */; };
+		78FE96181E8E918400F92C17 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78FE96161E8E90E400F92C17 /* WebKit.framework */; };
+		78FE96191E8E918400F92C17 /* WebKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 78FE96161E8E90E400F92C17 /* WebKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		78FE961A1E8E918400F92C17 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				78FE96191E8E918400F92C17 /* WebKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		787B16001E7DA508000AF4ED /* NewsProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		787B16031E7DA508000AF4ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +72,7 @@
 		787B16331E7DC062000AF4ED /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		789C879D1E7DCF7F0061D59B /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		78A6A0341E8B9B0500BC625C /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		78FE96161E8E90E400F92C17 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78FE96181E8E918400F92C17 /* WebKit.framework in Frameworks */,
+				78FE96171E8E90E400F92C17 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +109,7 @@
 				787B16171E7DA508000AF4ED /* NewsProjectTests */,
 				787B16221E7DA508000AF4ED /* NewsProjectUITests */,
 				787B16011E7DA508000AF4ED /* Products */,
+				78FE96151E8E90E300F92C17 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +158,14 @@
 			path = NewsProjectUITests;
 			sourceTree = "<group>";
 		};
+		78FE96151E8E90E300F92C17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78FE96161E8E90E400F92C17 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,6 +176,7 @@
 				787B15FC1E7DA508000AF4ED /* Sources */,
 				787B15FD1E7DA508000AF4ED /* Frameworks */,
 				787B15FE1E7DA508000AF4ED /* Resources */,
+				78FE961A1E8E918400F92C17 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

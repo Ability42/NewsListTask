@@ -7,29 +7,33 @@
 //
 
 import UIKit
+import WebKit
 
-class WebViewController: UIViewController {
+class WebViewController: UIViewController, WKUIDelegate {
 
-    @IBOutlet weak var webView: UIWebView!
+    var webView: WKWebView!
     
-    var url: String?
+    override func loadView() {
+        super.loadView()
+        let viewShift: Int = 64
+
+        
+        let webViewConfig = WKWebViewConfiguration()
+
+        let webViewRect = CGRect(x: 0, y: viewShift, width: Int(view.bounds.width), height: Int(view.bounds.height))
+        
+        webView = WKWebView(frame: webViewRect, configuration: webViewConfig)
+        
+        webView.uiDelegate = self
+        view.addSubview(webView)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        webView.loadRequest(URLRequest(url: URL(string: url!)!))
-        print(url ?? -1)
+        
+        let myURL = URL(string: "https://www.apple.com")
+        let myRequest = URLRequest(url: myURL!)
+        webView.load(myRequest)
     }
-
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
