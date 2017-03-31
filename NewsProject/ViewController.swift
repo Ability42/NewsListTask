@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
+    var activityIndicatorView: UIActivityIndicatorView!
     var articlesArray: [Article]? = []
 
     @IBOutlet weak var tableView: UITableView!
@@ -17,8 +18,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func loadView() {
         super.loadView()
-        tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 180
+        setupTableView()
     }
     
     override func viewDidLoad() {
@@ -32,6 +32,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         }
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if (self.articlesArray?.count)! <= 0 {
+            tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+            activityIndicatorView.startAnimating()
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        activityIndicatorView.startAnimating()
     }
     
     @IBAction func filterApply(_ sender: UISegmentedControl) {
@@ -48,7 +61,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func fetchArticlesWithFilter(filter: String) {
         // Test Server Manager
         
-        let source = "reuters"
+        let source = "techcrunch"
         let APIkey = "06ec29c6902c4616a382357a1ee918b4"
         let stringURL = "https://newsapi.org/v1/articles?source=\(source)&sortBy=\(filter)&apiKey=\(APIkey)"
         
@@ -68,6 +81,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
 
+    }
+    
+    func setupTableView() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 180
+        tableView.contentInset.bottom = 80
+        setupActivityIndicator()
+    }
+    
+    func setupActivityIndicator() {
+        activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+        tableView.backgroundView = activityIndicatorView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
