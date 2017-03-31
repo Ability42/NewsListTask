@@ -54,8 +54,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let manager = ServerManager.sharedManager
         
-        
-        manager.testRequest(source: stringURL) { (data) in
+        manager.makeRequest(source: stringURL) { (data) in
                 
             let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [String : Any]
             let jsonArticles = json["articles"] as? [[String : Any]]
@@ -72,8 +71,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // pushViewController
         let webVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "web") as! WebViewController
         webVC.urlToLoad = self.articlesArray?[indexPath.item].kUrl
+        self.navigationController?.pushViewController(webVC, animated: true)
     }
 
     
